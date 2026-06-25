@@ -1,0 +1,31 @@
+{
+  "name": "n8n-nodes-vocce",
+  "version": "0.1.0",
+  "description": "n8n community node to transcribe audio/video to text + SRT/VTT via vocce's hosted Whisper. No API key.",
+  "keywords": [
+    "n8n-community-node-package",
+    "n8n",
+    "vocce",
+    "transcription",
+    "whisper",
+    "speech-to-text",
+    "subtitles"
+  ],
+  "license": "MIT",
+  "homepage": "https://vocce.io",
+  "author": "vocce (https://vocce.io)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cmoonagent/vocce-agent.git",
+    "directory": "n8n-nodes-vocce"
+  },
+  "engines": { "node": ">=18" },
+  "files": ["nodes"],
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "nodes": ["nodes/Vocce/Vocce.node.js"]
+  },
+  "peerDependencies": {
+    "n8n-workflow": "*"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "name": "vocce-transcribe-mcp",
+  "version": "1.0.0",
+  "mcpName": "io.github.cmoonagent/vocce-agent",
+  "description": "MCP server for vocce — transcribe local audio/video to text + SRT/VTT via hosted Whisper large-v3. No API key required.",
+  "type": "module",
+  "bin": { "vocce-transcribe-mcp": "server.js" },
+  "files": ["server.js", "README.md", "LICENSE"],
+  "engines": { "node": ">=18" },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "transcription",
+    "transcribe",
+    "whisper",
+    "subtitles",
+    "speech-to-text",
+    "srt",
+    "vtt",
+    "audio",
+    "video",
+    "claude",
+    "ai-agent"
+  ],
+  "license": "MIT",
+  "author": "vocce (https://vocce.io)",
+  "homepage": "https://vocce.io",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cmoonagent/vocce-agent.git",
+    "directory": "transcribe-mcp-server"
+  },
+  "bugs": { "url": "https://github.com/cmoonagent/vocce-agent/issues" },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "zod": "^3.23.0"
+  }
+}

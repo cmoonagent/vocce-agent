@@ -1,0 +1,40 @@
+name: vocce transcribe
+description: Transcribe an audio/video file to text + SRT/VTT via vocce's hosted Whisper large-v3. No API key.
+author: vocce
+branding:
+  icon: mic
+  color: green
+inputs:
+  file:
+    description: Path to the local audio/video file to transcribe (relative to the workspace).
+    required: true
+  language:
+    description: ISO language code (e.g. en, zh, ja) or "auto" to auto-detect.
+    required: false
+    default: auto
+  format:
+    description: Output format — text, srt, vtt, or json.
+    required: false
+    default: text
+  api_base:
+    description: vocce API base URL (override for self-hosting/staging).
+    required: false
+    default: https://api.vocce.io/api/v1
+outputs:
+  result:
+    description: The transcription output in the chosen format.
+    value: ${{ steps.transcribe.outputs.result }}
+  result_file:
+    description: Path to a file containing the full result.
+    value: ${{ steps.transcribe.outputs.result_file }}
+runs:
+  using: composite
+  steps:
+    - id: transcribe
+      shell: bash
+      env:
+        VOCCE_FILE: ${{ inputs.file }}
+        VOCCE_LANGUAGE: ${{ inputs.language }}
+        VOCCE_FORMAT: ${{ inputs.format }}
+        VOCCE_API_BASE: ${{ inputs.api_base }}
+      run: python3 "${{ github.action_path }}/transcribe_action.py"

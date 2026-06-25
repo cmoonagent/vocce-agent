@@ -1,0 +1,30 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.cmoonagent/vocce-agent",
+  "title": "vocce transcribe",
+  "description": "Transcribe local audio/video to text + SRT/VTT via vocce's hosted Whisper large-v3. No API key required.",
+  "version": "1.0.0",
+  "websiteUrl": "https://vocce.io",
+  "repository": {
+    "url": "https://github.com/cmoonagent/vocce-agent",
+    "source": "github",
+    "subfolder": "transcribe-mcp-server"
+  },
+  "packages": [
+    {
+      "registryType": "npm",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "identifier": "vocce-transcribe-mcp",
+      "version": "1.0.0",
+      "transport": { "type": "stdio" },
+      "environmentVariables": [
+        {
+          "name": "VOCCE_API_BASE",
+          "description": "Override the vocce backend endpoint (defaults to the hosted API).",
+          "default": "https://api.vocce.io/api/v1",
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

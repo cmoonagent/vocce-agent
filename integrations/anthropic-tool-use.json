@@ -1,0 +1,22 @@
+{
+  "tools": [
+    {
+      "name": "transcribe_audio",
+      "description": "Transcribe a local audio or video file to text, SRT, and VTT using vocce's hosted Whisper large-v3. No API key required. Returns { text, srt, vtt, language }.",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "file_path": {
+            "type": "string",
+            "description": "Absolute path to a local audio/video file (mp3, wav, m4a, mp4, mov, …), up to 50 MB."
+          },
+          "language": {
+            "type": "string",
+            "description": "ISO code like 'en', 'zh', 'ja'. Omit to auto-detect."
+          }
+        },
+        "required": ["file_path"]
+      }
+    }
+  ]
+}
